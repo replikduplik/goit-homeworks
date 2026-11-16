@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinemania</title>
+
+    <link rel="stylesheet" href="./css/weekly-home.css" />
+    <link rel="stylesheet" href="./css/scroll.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/hero.css" />
+    <link rel="stylesheet" href="./css/upcoming.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body>
+    <button id="scrollToTopBtn" title="Yukarı Çık">↑</button>
+
+    <load src="./partials/header.html" />
+    <load src="./partials/loader.html" />
+
+    <main>
+      <!-- Loads the specified .html file -->
+      <load src="./partials/hero.html" />
+      <load src="./partials/weekly-home.html"/>
+      <load src="./partials/upcoming.html" />
+    
+    </main>
+    
+    <load src="./partials/footer.html" />
+
+    
+    <script type="module" src="./js/footer-modal.js"></script>
+    <script type="module" src="./js/header.js"></script>
+    <script type="module" src="./js/weekly-home.js"></script>
+    <script type="module" src="./js/scroll.js"></script>
+    <script type="module" src="./js/hero.js"></script>
+    <script type="module" src="./js/upcoming.js"></script>
+
+    <script type="module" src="./js/loader.js"></script>
+  </body>
+</html>

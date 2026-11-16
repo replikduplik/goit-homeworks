@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoIT Homeworks — Çağdaş Şahin</title>
+  <meta name="description" content="GoIT Full-Stack eğitimi sırasında yapılan HTML/CSS, JavaScript ve React ödevleri ile takım projeleri." />
+  <style>
+    :root {
+      --bg: #0d1117; --panel: #161b22; --line: #30363d; --text: #e6edf3;
+      --muted: #8b949e; --accent: #58a6ff; --accent-2: #3fb950; --tag: #21262d;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f6f8fa; --panel: #ffffff; --line: #d0d7de; --text: #1f2328;
+              --muted: #59636e; --accent: #0969da; --accent-2: #1a7f37; --tag: #eff2f5; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+           background: var(--bg); color: var(--text); }
+    main { max-width: 1040px; margin: 0 auto; padding: 56px 20px 72px; }
+    header { margin-bottom: 40px; }
+    h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; letter-spacing: -0.02em; }
+    header p { margin: 0; color: var(--muted); max-width: 640px; }
+    header a { color: var(--accent); text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    section { margin-top: 40px; }
+    h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+         margin: 0 0 14px; font-weight: 600; }
+    .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+            padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .card h3 { margin: 0; font-size: 16px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
+    .links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .links a { font-size: 13px; text-decoration: none; padding: 4px 10px; border-radius: 6px;
+               border: 1px solid var(--line); color: var(--text); background: var(--tag); }
+    .links a.demo { border-color: transparent; background: var(--accent); color: #fff; }
+    .links a:hover { filter: brightness(1.1); }
+    .tag { display: inline-block; font-size: 12px; color: var(--accent-2); }
+    footer { margin-top: 56px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>GoIT Homeworks</h1>
+    <p>GoIT Full-Stack eğitimi sırasında yaptığım HTML/CSS, JavaScript ve React ödevleri ile takım projeleri.
+      Kaynak kodlar <a href="https://github.com/replikduplik/goit-homeworks">GitHub'da</a>.</p>
+  </header>
+
+  <section>
+    <h2>HTML / CSS — WebStudio</h2>
+    <div class="grid" id="markup"></div>
+  </section>
+
+  <section>
+    <h2>JavaScript</h2>
+    <div class="grid" id="js"></div>
+  </section>
+
+  <section>
+    <h2>React</h2>
+    <div class="grid" id="react"></div>
+  </section>
+
+  <section>
+    <h2>Takım projeleri</h2>
+    <div class="grid" id="team"></div>
+  </section>
+
+  <footer>Çağdaş Şahin · <a href="https://github.com/replikduplik" style="color:inherit">@replikduplik</a></footer>
+</main>
+
+<script>
+  const SRC = 'https://github.com/replikduplik/goit-homeworks/tree/main/';
+  const data = {
+    markup: [1, 2, 3, 4, 5, 6].map(n => ({
+      path: `markup/hw-0${n}`, title: `Markup #${n}`,
+      desc: ['Semantik HTML iskeleti', 'Temel CSS ve tipografi', 'Flexbox ile yerleşim',
+             'SVG ikonlar, hover ve geçiş efektleri', 'Formlar ve gelişmiş etkileşimler', 'Mobil menü ve responsive tasarım'][n - 1],
+    })),
+    js: [
+      ...[1, 2, 3, 4, 5, 6].map(n => ({ path: `js/hw-0${n}`, title: `JS #${n}`,
+        desc: 'Konsol görevleri. Sonuçları görmek için tarayıcı konsolunu (F12) aç.', tag: 'konsol' })),
+      { path: 'js/hw-07', title: 'JS #7', desc: 'DOM ve olay görevleri (6 alt sayfa)' },
+      { path: 'js/hw-08', title: 'JS #8', desc: 'Görsel galerisi' },
+      { path: 'js/hw-09', title: 'JS #9', desc: 'SimpleLightbox galerisi ve localStorage destekli form', tag: 'Vite',
+        extra: [['Galeri', '1-gallery.html'], ['Form', '2-form.html']] },
+      { path: 'js/hw-10', title: 'JS #10', desc: 'flatpickr ile geri sayım sayacı ve Promise tabanlı iziToast bildirimleri', tag: 'Vite',
+        extra: [['Sayaç', '1-timer.html'], ['Snackbar', '2-snackbar.html']] },
+    ],
+    react: [
+      { path: 'react/hw-01', title: 'React #1', desc: 'Profile, FriendList ve TransactionHistory bileşenleri', tag: 'React + Vite' },
+    ],
+    team: [
+      { path: 'team-projects/cinemania', title: 'Cinemania', desc: 'Film keşif uygulaması: katalog, kütüphane ve modal detaylar', tag: 'Takım B · Vite',
+        extra: [['Katalog', 'catolog.html'], ['Kütüphane', 'library.html']] },
+      { path: 'team-projects/project-1-vite', title: 'Focus.Frame', desc: 'Fotoğrafçılık kursu tanıtım sayfası', tag: 'Takım Delta · Vite' },
+      { path: 'team-projects/project1', title: 'Focus.Frame (ilk sürüm)', desc: 'Vite sürümünden önceki ilk taslak. Yalnızca kaynak kodu.', tag: 'Takım Delta', noDemo: true },
+    ],
+  };
+
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  for (const [id, items] of Object.entries(data)) {
+    document.getElementById(id).innerHTML = items.map(i => `
+      <article class="card">
+        <h3>${esc(i.title)}</h3>
+        ${i.tag ? `<span class="tag">${esc(i.tag)}</span>` : ''}
+        <p>${esc(i.desc)}</p>
+        <div class="links">
+          ${i.noDemo ? '' : `<a class="demo" href="./${i.path}/">Demo</a>`}
+          ${(i.extra || []).map(([l, f]) => `<a href="./${i.path}/${f}">${esc(l)}</a>`).join('')}
+          <a href="${SRC + i.path}">Kaynak</a>
+        </div>
+      </article>`).join('');
+  }
+</script>
+</body>
+</html>
